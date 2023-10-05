@@ -1,5 +1,15 @@
+import { useContext } from "react";
+import { AuthContext } from "../Hook/AuthProvider";
+
 /* eslint-disable react/no-unescaped-entities */
 const Login = () => {
+    const { googleLogin } = useContext(AuthContext);
+    const loginWithGoogle = () => {
+        googleLogin()
+            .then(res => console.log(res))
+            .catch(error => console.log(error))
+    }
+
     return (
         <div>
             <div className="bg-gray-100 flex items-center justify-center h-screen">
@@ -18,6 +28,7 @@ const Login = () => {
                             <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Login</button>
                         </div>
                     </form>
+                    <button onClick={loginWithGoogle} type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-600 mb-6">Google</button>
                     <p className="text-gray-600 text-sm text-center">Don't have an account? <a href="/register" className="text-blue-500">Register</a></p>
                 </div>
             </div>

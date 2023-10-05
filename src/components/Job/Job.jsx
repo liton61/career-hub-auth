@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
 const Job = ({ job }) => {
@@ -18,7 +19,7 @@ const Job = ({ job }) => {
                 </div>
                 <div className="card-actions">
                     <Link to={`/jobDetails/${id}`}>
-                    <button className="btn btn-primary">View Details</button>
+                        <button className="btn btn-primary">View Details</button>
                     </Link>
                 </div>
             </div>
