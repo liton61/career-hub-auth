@@ -1,0 +1,7 @@
+.nav-link:hover {
+    background-color: transparent !important;
+}
+
+.nav-link.active {
+    background-color: transparent !important;
+}
